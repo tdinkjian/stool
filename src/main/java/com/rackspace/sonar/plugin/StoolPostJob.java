@@ -34,16 +34,16 @@ public class StoolPostJob implements PostJob, CheckProject {
             return;
         }
 
-        try {
-
-            GlobalSummary summary = getGlobalSummaryFromLocalJTL(project);
-            if (summary != null) {
-                StoolDAO.saveSummaryAsMetrics(summary, context);
-            }
-
-        } catch (Exception e) {
-
-        }
+//        try {
+//
+//            GlobalSummary summary = getGlobalSummaryFromLocalJTL(project);
+//            if (summary != null) {
+//                StoolDAO.saveSummaryAsMetrics(summary, context);
+//            }
+//
+//        } catch (Exception e) {
+//
+//        }
     }
 
     /**
