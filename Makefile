@@ -1,6 +1,6 @@
 TAG=sonar-stool
-ID=`docker ps | grep $(TAG) | cut -f1 -d' '`
 SHELLINIT=boot2docker shellinit 1>tmp; . ./tmp; rm ./tmp
+ID=`$(SHELLINIT) && docker ps | grep $(TAG) | cut -f1 -d' '`
 
 help:
 	@echo "build 	- build the docker container"
@@ -11,6 +11,7 @@ help:
 	@echo "open  	- open sonar in your browser"
 
 build:
+	mvn package
 	@$(SHELLINIT) && docker build -t $(TAG) .
 
 start:
